@@ -449,7 +449,6 @@
   margin: 0 auto;
 }
 
-/* 用 float，不用 flex */
 .form-card {
   float: left;
   width: 66%;
@@ -470,7 +469,7 @@
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
 }
 
-/* 清除浮动 */
+
 .contact-wrapper::after {
   content: "";
   display: table;
