@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameHome</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="GameHome">
+      </a>
+      <ul class="nav-links">
+        <li><a href="products.html">Product</a></li>
+        <li><a href="contact.html">Customer Service</a></li>
+        <li><a href="#" title="Sign In" onclick="openModal()">Sign in</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="banner-slider">
+  <button class="banner-arrow left" onclick="prevSlide()">&#10094;</button>
+
+  <div class="banner-track">
+    <div class="banner-slide active">
+      <img src="gta.jpg" alt="Promotion banner 1">
+    </div>
+
+    <div class="banner-slide">
+      <img src="re9.avif" alt="Promotion banner 2">
+    </div>
+
+    <div class="banner-slide">
+      <img src="ark.jpg" alt="Promotion banner 3">
+    </div>
+  </div>
+
+  <button class="banner-arrow right" onclick="nextSlide()">&#10095;</button>
+
+          <div class="banner-dots">
+            <button class="dot active" onclick="showSlide(0)"></button>
+            <button class="dot" onclick="showSlide(1)"></button>
+            <button class="dot" onclick="showSlide(2)"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="platform-section" id="platforms">
+      <div class="platform-wrapper">
+        <a href="products.html?platform=ns" class="platform-card ns">
+          <div class="platform-top">
+            <div class="platform-label">Platform Collection</div>
+            <h2>Nintendo Switch</h2>
+            <p>
+          
+            </p>
+          </div>
+          <div class="platform-bottom">
+            <div class="platform-icon">NS</div>
+            <span class="platform-link">Shop Switch →</span>
+          </div>
+        </a>
+
+        <a href="products.html?platform=ps" class="platform-card ps">
+          <div class="platform-top">
+            <div class="platform-label">Platform Collection</div>
+            <h2>PlayStation</h2>
+            <p>
+            
+            </p>
+          </div>
+          <div class="platform-bottom">
+            <div class="platform-icon">PS</div>
+            <span class="platform-link">Shop PlayStation →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+      <!-- Product Catalog Page -->
+    <section class="catalog">
+
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <h2>Navigation Bar</h2>
+    </nav>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <span>Platform</span>
+        <span>Search</span>
+        <span>Sort</span>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+
+        <!-- Nintendo Switch Games -->
+        <div class="product-card">
+            <img src="zelda.avif" alt="Zelda">
+            <h3>Zelda: Tears of the Kingdom</h3>
+            <p>$79.99</p>
+        </div>
+
+        <div class="product-card">
+            <img src="mario.avif" alt="Mario">
+            <h3>Super Mario Odyssey</h3>
+            <p>$59.99</p>
+        </div>
+
+        <div class="product-card">
+            <img src="pokemon.avif" alt="Pokemon">
+            <h3>Pokemon Scarlet</h3>
+            <p>$79.99</p>
+        </div>
+
+        <!-- PS5 Games -->
+        <div class="product-card">
+            <img src="spiderman.jpg" alt="Spiderman">
+            <h3>Spider-Man 2</h3>
+            <p>$89.99</p>
+        </div>
+
+        <div class="product-card">
+            <img src="god of war.avif" alt="God of War">
+            <h3>God of War Ragnarok</h3>
+            <p>$89.99</p>
+        </div>
+
+        <div class="product-card">
+            <img src="fifa.jpg" alt="FIFA">
+            <h3>EA Sports FC 24</h3>
+            <p>$89.99</p>
+        </div>
+
+    </div>
+
+    
+  </main>
+
+  <footer>
+    <p>© 2026 GameHub. Designed for a COMP 2680 project</p>
+  </footer>
+  <!--Sign in modal-->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2>Sign In</h2>
+    <p class="modal-sub">Welcome back to GameHome</p>
+
+  <div class="input-group">
+    <label>Email</label>
+    <input type="email" id="emailInput" placeholder="Enter your email">
+    <span class="error-msg" id="emailError">Please enter a valid email</span>
+  </div>
+
+  <div class="input-group">
+    <label>Password</label>
+    <input type="password" id="passwordInput" placeholder="Enter your password">
+    <span class="error-msg" id="passwordError">Please enter your password</span>
+  </div>
+
+  <button class="modal-btn" onclick="handleSignIn()">Sign In</button>
+    <p class="modal-footer">Don't have an account? <a href="#">Register</a></p>
+  </div>
+  </div>
+    <div id="modal-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>
