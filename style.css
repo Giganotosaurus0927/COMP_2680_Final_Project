@@ -449,35 +449,19 @@
   margin: 0 auto;
 }
 
-.form-card {
-  float: left;
-  width: 66%;
+.form-card,
+.contact-support-box,
+.contact-links-box {
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   padding: 30px;
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
-}
-
-.info-card {
-  float: right;
-  width: 31%;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  padding: 30px;
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
-}
-
-
-.contact-wrapper::after {
-  content: "";
-  display: table;
-  clear: both;
+  margin-bottom: 24px;
 }
 
 .form-card h2,
-.info-card h2 {
+.contact-support-box h2 {
   margin-bottom: 10px;
 }
 
@@ -511,6 +495,7 @@ legend {
 }
 
 input[type="text"],
+input[type="number"],
 input[type="email"],
 input[type="tel"],
 input[type="date"],
@@ -561,14 +546,6 @@ textarea:focus:invalid {
   margin-right: 8px;
 }
 
-input[type="range"] {
-  width: 100%;
-}
-
-.range-value {
-  margin-top: 6px;
-}
-
 .button-row {
   margin-top: 20px;
 }
@@ -608,38 +585,173 @@ input[type="range"] {
   color: #d8ffd8;
 }
 
-.info-card p {
+.contact-support-box p {
   margin-bottom: 14px;
 }
 
-.service-box {
-  margin-top: 25px;
-  padding: 18px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
+.contact-links-box {
+  overflow: hidden;
 }
 
-.service-box h3 {
-  margin-bottom: 10px;
-  color: #ffd54f;
+.contact-links-column {
+  float: left;
+  width: 48%;
 }
 
-.service-box ul {
-  padding-left: 18px;
+.contact-links-column:last-child {
+  float: right;
 }
 
-.service-box li {
-  margin-bottom: 8px;
+.contact-links-column h3 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.contact-links-column a {
+  display: block;
+  margin-bottom: 12px;
+  color: #bdbdbd;
+  transition: 0.3s ease;
+}
+
+.contact-links-column a:hover {
+  color: #66b3ff;
+}
+
+.contact-links-box::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.shipping-section {
+  padding: 20px 0 60px;
+}
+
+.shipping-container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.shipping-card,
+.shipping-support,
+.shipping-links-box {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.28);
+  margin-bottom: 24px;
+}
+
+.shipping-card h2,
+.shipping-support h2 {
+  margin-bottom: 18px;
+}
+
+.shipping-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.shipping-table th,
+.shipping-table td {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 14px;
+}
+
+.shipping-table th {
+  background-color: rgba(58, 123, 255, 0.35);
+}
+
+.shipping-table td {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.shipping-support p {
+  margin-bottom: 14px;
+}
+
+.shipping-links-box {
+  overflow: hidden;
+}
+
+.shipping-links-column {
+  float: left;
+  width: 48%;
+}
+
+.shipping-links-column:last-child {
+  float: right;
+}
+
+.shipping-links-column h3 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.shipping-links-column a {
+  display: block;
+  margin-bottom: 12px;
+  color: #bdbdbd;
+  transition: 0.3s ease;
+}
+
+.shipping-links-column a:hover {
+  color: #66b3ff;
+}
+
+.shipping-links-box::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 @media (max-width: 900px) {
   .form-card,
-  .info-card {
+  .contact-support-box,
+  .contact-links-box,
+  .shipping-card,
+  .shipping-support,
+  .shipping-links-box {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-links-column,
+  .shipping-links-column {
     float: none;
     width: 100%;
+    margin-bottom: 20px;
   }
 
-  .info-card {
-    margin-top: 20px;
+  .contact-links-column:last-child,
+  .shipping-links-column:last-child {
+    float: none;
   }
+
+  .button-row input[type="submit"],
+  .button-row input[type="reset"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .shipping-table th,
+  .shipping-table td {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}
+.shipping-link a {
+  color: #66b3ff;
+  font-weight: bold;
+}
+
+.shipping-link a:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
