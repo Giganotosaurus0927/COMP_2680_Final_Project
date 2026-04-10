@@ -18,7 +18,7 @@
       <ul class="nav-links">
         <li><a href="products.html">Product</a></li>
         <li><a href="contact.html" class="active">Customer Service</a></li>
-        <li><a href="signin.html">Sign In</a></li>
+        <li><a href="#" title="Sign In" onclick="openModal()">Sign in</a></li>
         <li><a href="cart.html">Cart</a></li>
       </ul>
     </nav>
@@ -218,108 +218,29 @@
     <p id="lastUpdated"></p>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("contactForm");
-      const fullName = document.getElementById("fullName");
-      const age = document.getElementById("age");
-      const phone = document.getElementById("phone");
-      const orderNumber = document.getElementById("orderNumber");
-      const message = document.getElementById("message");
-      const successMessage = document.getElementById("successMessage");
-      const lastUpdated = document.getElementById("lastUpdated");
+   <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2>Sign In</h2>
+    <p class="modal-sub">Welcome back to GameHome</p>
 
-      lastUpdated.textContent = "Last Updated: " + document.lastModified;
+  <div class="input-group">
+    <label>Email</label>
+    <input type="email" id="emailInput" placeholder="Enter your email">
+    <span class="error-msg" id="emailError">Please enter a valid email</span>
+  </div>
 
-      fullName.addEventListener("input", function () {
-        fullName.setCustomValidity("");
+  <div class="input-group">
+    <label>Password</label>
+    <input type="password" id="passwordInput" placeholder="Enter your password">
+    <span class="error-msg" id="passwordError">Please enter your password</span>
+  </div>
 
-        if (fullName.value.trim().length < 2) {
-          fullName.setCustomValidity("Full name must be at least 2 characters.");
-        } else if (!/^[A-Za-z ]{2,40}$/.test(fullName.value.trim())) {
-          fullName.setCustomValidity("Use letters and spaces only.");
-        }
-      });
-
-      age.addEventListener("input", function () {
-        age.setCustomValidity("");
-
-        if (age.value !== "" && (age.value < 10 || age.value > 100)) {
-          age.setCustomValidity("Age must be between 10 and 100.");
-        }
-      });
-
-      phone.addEventListener("input", function () {
-        phone.setCustomValidity("");
-
-        if (phone.value !== "" && !/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/.test(phone.value)) {
-          phone.setCustomValidity("Phone number must be in this format: 123-456-7890");
-        }
-      });
-
-      orderNumber.addEventListener("input", function () {
-        orderNumber.setCustomValidity("");
-
-        if (orderNumber.value !== "" && !/^[A-Z]{4}[0-9]{4}$/.test(orderNumber.value)) {
-          orderNumber.setCustomValidity("Order number must look like ABCD1234");
-        }
-      });
-
-      message.addEventListener("input", function () {
-        message.setCustomValidity("");
-
-        if (message.value.trim().length < 10) {
-          message.setCustomValidity("Message must be at least 10 characters long.");
-        }
-      });
-
-      form.addEventListener("submit", function (event) {
-        successMessage.style.display = "none";
-
-        fullName.setCustomValidity("");
-        age.setCustomValidity("");
-        phone.setCustomValidity("");
-        orderNumber.setCustomValidity("");
-        message.setCustomValidity("");
-
-        if (fullName.value.trim().length < 2) {
-          fullName.setCustomValidity("Full name must be at least 2 characters.");
-        } else if (!/^[A-Za-z ]{2,40}$/.test(fullName.value.trim())) {
-          fullName.setCustomValidity("Use letters and spaces only.");
-        }
-
-        if (age.value !== "" && (age.value < 10 || age.value > 100)) {
-          age.setCustomValidity("Age must be between 10 and 100.");
-        }
-
-        if (phone.value !== "" && !/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/.test(phone.value)) {
-          phone.setCustomValidity("Phone number must be in this format: 123-456-7890");
-        }
-
-        if (orderNumber.value !== "" && !/^[A-Z]{4}[0-9]{4}$/.test(orderNumber.value)) {
-          orderNumber.setCustomValidity("Order number must look like ABCD1234");
-        }
-
-        if (message.value.trim().length < 10) {
-          message.setCustomValidity("Message must be at least 10 characters long.");
-        }
-
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          form.reportValidity();
-          return;
-        }
-
-        event.preventDefault();
-        successMessage.style.display = "block";
-        alert("Form submitted successfully!");
-        form.reset();
-      });
-
-      form.addEventListener("reset", function () {
-        successMessage.style.display = "none";
-      });
-    });
-  </script>
+  <button class="modal-btn" onclick="handleSignIn()">Sign In</button>
+    <p class="modal-footer">Don't have an account? <a href="#">Register</a></p>
+  </div>
+  </div>
+    <div id="modal-container"></div>
+    <script src="script.js"></script>
 </body>
 </html>

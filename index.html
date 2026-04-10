@@ -13,10 +13,10 @@
         <img src="logo.png" alt="GameHome">
       </a>
       <ul class="nav-links">
-        <li><a href="#">Product</a></li>
-        <li><a href="#">Customer Service</a></li>
-        <li><a href="#">Sign In</a></li>
-        <li><a href="#">Cart</a></li>
+        <li><a href="products.html">Product</a></li>
+        <li><a href="contact.html">Customer Service</a></li>
+        <li><a href="#" title="Sign In" onclick="openModal()">Sign in</a></li>
+        <li><a href="cart.html">Cart</a></li>
       </ul>
     </nav>
   </header>
@@ -90,60 +90,29 @@
   <footer>
     <p>© 2026 GameHub. Designed for a COMP 2680 project</p>
   </footer>
-  <script>
-    const slides = document.querySelectorAll('.banner-slide');
-    const dots = document.querySelectorAll('.dot');
-    let currentSlide = 0;
-    let autoSlide;
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2>Sign In</h2>
+    <p class="modal-sub">Welcome back to GameHome</p>
 
-    function showSlide(index) {
-      if (index < 0) {
-        currentSlide = slides.length - 1;
-      } else if (index >= slides.length) {
-        currentSlide = 0;
-      } else {
-        currentSlide = index;
-      }
+  <div class="input-group">
+    <label>Email</label>
+    <input type="email" id="emailInput" placeholder="Enter your email">
+    <span class="error-msg" id="emailError">Please enter a valid email</span>
+  </div>
 
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === currentSlide);
-      });
+  <div class="input-group">
+    <label>Password</label>
+    <input type="password" id="passwordInput" placeholder="Enter your password">
+    <span class="error-msg" id="passwordError">Please enter your password</span>
+  </div>
 
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlide);
-      });
-    }
-
-    function nextSlide() {
-      showSlide(currentSlide + 1);
-      resetAutoSlide();
-    }
-
-    function prevSlide() {
-      showSlide(currentSlide - 1);
-      resetAutoSlide();
-    }
-
-    function startAutoSlide() {
-      autoSlide = setInterval(() => {
-        showSlide(currentSlide + 1);
-      }, 3000);
-    }
-
-    function resetAutoSlide() {
-      clearInterval(autoSlide);
-      startAutoSlide();
-    }
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        showSlide(index);
-        resetAutoSlide();
-      });
-    });
-
-    showSlide(0);
-    startAutoSlide();
-  </script>
+  <button class="modal-btn" onclick="handleSignIn()">Sign In</button>
+    <p class="modal-footer">Don't have an account? <a href="#">Register</a></p>
+  </div>
+  </div>
+    <div id="modal-container"></div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@
       <ul class="nav-links">
         <li><a href="products.html">Product</a></li>
         <li><a href="contact.html">Customer Service</a></li>
-        <li><a href="signin.html">Sign In</a></li>
+        <li><a href="#" title="Sign In" onclick="openModal()">Sign in</a></li>
         <li><a href="cart.html">Cart</a></li>
       </ul>
     </nav>
@@ -84,11 +84,29 @@
     <p id="lastUpdated"></p>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const lastUpdated = document.getElementById("lastUpdated");
-      lastUpdated.textContent = "Last Updated: " + document.lastModified;
-    });
-  </script>
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2>Sign In</h2>
+    <p class="modal-sub">Welcome back to GameHome</p>
+
+  <div class="input-group">
+    <label>Email</label>
+    <input type="email" id="emailInput" placeholder="Enter your email">
+    <span class="error-msg" id="emailError">Please enter a valid email</span>
+  </div>
+
+  <div class="input-group">
+    <label>Password</label>
+    <input type="password" id="passwordInput" placeholder="Enter your password">
+    <span class="error-msg" id="passwordError">Please enter your password</span>
+  </div>
+
+  <button class="modal-btn" onclick="handleSignIn()">Sign In</button>
+    <p class="modal-footer">Don't have an account? <a href="#">Register</a></p>
+  </div>
+  </div>
+    <div id="modal-container"></div>
+    <script src="script.js"></script>
 </body>
 </html>
