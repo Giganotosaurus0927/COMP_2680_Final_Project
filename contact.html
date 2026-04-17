@@ -10,10 +10,13 @@
 </head>
 <body id="top">
   <header>
-    <nav class="navbar">
+    <nav class="navbar" id="navLinks">
       <a href="index.html" class="logo">
         <img src="logo.png" alt="GameHome">
       </a>
+       <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+        ☰
+      </button>
       <ul class="nav-links">
       <li>
         <a href="products.html" title="Product">
@@ -214,28 +217,48 @@
           <p><strong>Business Hours:</strong><br>Mon - Fri: 9:00 AM - 6:00 PM</p>
         </div>
 
-        <div class="contact-links-box">
-          <div class="contact-links-column">
-            <h3>Quick Links</h3>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="shipping.html">Shipping Info</a>
+        <div class="shipping-banner">
+          <div class="shipping-banner-text">
+            <h3>Need Shipping Information?</h3>
+            <p>Check our delivery options, estimated times, and costs.</p>
           </div>
-
-          <div class="contact-links-column">
-            <h3>Help</h3>
-            <a href="contact.html">Customer Service</a>
-            <a href="signin.html">My Account</a>
-            <a href="#top">Back to Top</a>
-          </div>
+          <a href="shipping.html" class="shipping-banner-btn">View Shipping Info &rarr;</a>
+        </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>GameHome</h3>
+      <p>Your one-stop shop for Nintendo Switch &amp; PlayStation games.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="shipping.html">Shipping Info</a>
+      <a href="contact.html">Customer Service</a>
+    </div>
+    <div class="footer-col">
+      <h3>Support</h3>
+      <a href="contact.html">Contact Us</a>
+      <a href="shipping.html">Shipping Policy</a>
+      <a href="#">My Account</a>
+    </div>
+    <div class="footer-col">
+      <h3>Business Hours</h3>
+      <p>Mon &ndash; Fri: 9:00 AM &ndash; 6:00 PM</p>
+      <p>Sat &ndash; Sun: Closed</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 GameHub. Designed for a COMP 2680 project</p>
     <p id="lastUpdated"></p>
-  </footer>
+  </div>
+</footer>
   <!--Sign in modal-->
    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
   <div class="modal" onclick="event.stopPropagation()">

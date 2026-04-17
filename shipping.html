@@ -10,10 +10,13 @@
 </head>
 <body>
   <header>
-    <nav class="navbar">
+    <nav class="navbar" id="navLinks">
       <a href="index.html" class="logo">
         <img src="logo.png" alt="GameHome">
       </a>
+       <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+        ☰
+      </button>
       <ul class="nav-links">
       <li>
         <a href="products.html" title="Product">
@@ -95,13 +98,34 @@
   </main>
 
   <footer>
-    <div class="footer-links">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>GameHome</h3>
+      <p>Your one-stop shop for Nintendo Switch &amp; PlayStation games.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Quick Links</h3>
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="shipping.html">Shipping Info</a>
       <a href="contact.html">Customer Service</a>
     </div>
+    <div class="footer-col">
+      <h3>Support</h3>
+      <a href="contact.html">Contact Us</a>
+      <a href="shipping.html">Shipping Policy</a>
+      <a href="#">My Account</a>
+    </div>
+    <div class="footer-col">
+      <h3>Business Hours</h3>
+      <p>Mon &ndash; Fri: 9:00 AM &ndash; 6:00 PM</p>
+      <p>Sat &ndash; Sun: Closed</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 GameHub. Designed for a COMP 2680 project</p>
     <p id="lastUpdated"></p>
+  </div>
   </footer>
   <!--Sign in modal-->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">

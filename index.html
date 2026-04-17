@@ -12,7 +12,10 @@
       <a href="index.html" class="logo">
         <img src="logo.png" alt="GameHome">
       </a>
-      <ul class="nav-links">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
+        ☰
+      </button>
+      <ul class="nav-links" id="navLinks">
       <li>
         <a href="products.html" title="Product">
           <img src="product.png" alt="Product" width="60" height="60">
@@ -69,12 +72,29 @@
             <button class="dot" onclick="showSlide(2)"></button>
           </div>
         </div>
+        <!-- embedded video section -->
+        <section class="video-preview">
+          <div class="video-text">
+
+          </div>
+
+          <div class="video-embed-wrapper">
+            <iframe
+              id="js_video_iframe"
+              class="video-embed"
+              src="https://jumpshare.com/embed/JhjYP72Yc9OogHjm15WQ"
+              title="GameHome preview video"
+              allow="fullscreen"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </section>
       </div>
     </section>
 
     <section class="platform-section" id="platforms">
       <div class="platform-wrapper">
-        <a href="products.html?platform=ns" class="platform-card ns">
+        <a href="products.html?platform=nintendo" class="platform-card ns">
           <div class="platform-top">
             <div class="platform-label">Platform Collection</div>
             <h2>Nintendo Switch</h2>
@@ -88,7 +108,7 @@
           </div>
         </a>
 
-        <a href="products.html?platform=ps" class="platform-card ps">
+        <a href="products.html?platform=ps5" class="platform-card ps">
           <div class="platform-top">
             <div class="platform-label">Platform Collection</div>
             <h2>PlayStation</h2>
@@ -107,9 +127,36 @@
     
   </main>
 
-  <footer>
-    <p>© 2026 GameHub. Designed for a COMP 2680 project</p>
-  </footer>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>GameHome</h3>
+      <p>Your one-stop shop for Nintendo Switch &amp; PlayStation games.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="shipping.html">Shipping Info</a>
+      <a href="contact.html">Customer Service</a>
+    </div>
+    <div class="footer-col">
+      <h3>Support</h3>
+      <a href="contact.html">Contact Us</a>
+      <a href="shipping.html">Shipping Policy</a>
+      <a href="#">My Account</a>
+    </div>
+    <div class="footer-col">
+      <h3>Business Hours</h3>
+      <p>Mon &ndash; Fri: 9:00 AM &ndash; 6:00 PM</p>
+      <p>Sat &ndash; Sun: Closed</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 GameHub. Designed for a COMP 2680 project</p>
+    <p id="lastUpdated"></p>
+  </div>
+</footer>
   <!--Sign in modal-->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
   <div class="modal" onclick="event.stopPropagation()">
