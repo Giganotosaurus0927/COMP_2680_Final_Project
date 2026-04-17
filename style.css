@@ -597,10 +597,10 @@
   margin: 0 auto;
 }
 
-.form-card,
-.contact-support-box,
-.contact-links-box {
-  background: rgba(255, 255, 255, 0.07);
+.form-card {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)), url("spiderman2.png");
+  background-size: cover;
+  background-position: 25% center;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   padding: 30px;
