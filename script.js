@@ -207,3 +207,69 @@
       const lastUpdated = document.getElementById("lastUpdated");
       lastUpdated.textContent = "Last Updated: " + document.lastModified;
     });
+
+    /*cart*/
+    function openCart() {
+    document.getElementById('cartDrawer').classList.add('active');
+    document.getElementById('cartOverlay').classList.add('active');
+  }
+
+    function closeCart() {
+      document.getElementById('cartDrawer').classList.remove('active');
+      document.getElementById('cartOverlay').classList.remove('active');
+    }
+
+    // data
+    let cartItems = [];
+
+    function addToCart(product) {
+      const existing = cartItems.find(item => item.name === product.name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cartItems.push({ ...product, qty: 1 });
+      }
+      renderCart();
+      openCart();
+    }
+
+    function removeFromCart(name) {
+      cartItems = cartItems.filter(item => item.name !== name);
+      renderCart();
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cartItems');
+      const empty = document.getElementById('cartEmpty');
+      const total = document.getElementById('cartTotal');
+
+      if (cartItems.length === 0) {
+        container.innerHTML = '';
+        container.appendChild(empty);
+        total.textContent = '$0.00';
+        return;
+      }
+
+      const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
+      total.textContent = '$' + totalPrice.toFixed(2);
+
+      container.innerHTML = cartItems.map(item => `
+        <div class="cart-item">
+          <img src="${item.img}" alt="${item.name}">
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-platform">${item.platform} · Qty: ${item.qty}</div>
+            <div class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</div>
+          </div>
+          <button class="cart-item-remove" onclick="removeFromCart('${item.name}')">✕</button>
+        </div>
+      `).join('');
+    }
+
+    // ESC
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeModal();
+        closeCart();
+      }
+    });

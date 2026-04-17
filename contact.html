@@ -12,15 +12,34 @@
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo">
-        <img src="logo.png" alt="GameHome logo" />
+        <img src="logo.png" alt="GameHome">
       </a>
-
       <ul class="nav-links">
-        <li><a href="products.html">Product</a></li>
-        <li><a href="contact.html" class="active">Customer Service</a></li>
-        <li><a href="#" title="Sign In" onclick="openModal()">Sign in</a></li>
-        <li><a href="cart.html">Cart</a></li>
-      </ul>
+      <li>
+        <a href="products.html" title="Product">
+          <img src="product.png" alt="Product" width="60" height="60">
+          <span>Product</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" title="Customer Service">
+          <img src="contact.png" alt="Customer Service" width="60" height="60">
+          <span>Contact</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Sign In" onclick="openModal()">
+          <img src="sign.png" alt="Sign In" width="60" height="60">
+          <span>Sign In</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Cart" onclick="openCart()">
+          <img src="cart.png" alt="Cart" width="60" height="60">
+          <span>Cart</span>
+        </a>
+      </li>
+    </ul>
     </nav>
   </header>
 
@@ -241,6 +260,33 @@
   </div>
   </div>
     <div id="modal-container"></div>
-    <script src="script.js"></script>
+
+    <!-- cart -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      
+      <div class="cart-empty" id="cartEmpty">
+        <p>🛒</p>
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="cart-checkout-btn">Checkout</button>
+    </div>
+  </div>
+<script src="script.js"></script>
 </body>
 </html>
